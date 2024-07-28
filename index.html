@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cardápio Toq de Chef</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+</head>
+<body>
+    <section id="dados">
+
+        <div id="misturas">
+            <div>
+                <input type="text" class="dados-mistura" placeholder="Insira a mistura ">
+                <button id="bt-adicao-mistura">+</button>
+            </div>
+        </div>
+
+        <div id="acomps">
+            <div>
+                <input type="text" class="dados-acomp" placeholder="Insira o acompanhamento">
+                <button id="bt-adicao-acomp">+</button>
+            </div>
+        </div>
+
+    </section>
+
+    <div id="botao"><button id="botaoDownload">GERAR CARDÁPIO</button></div>
+    <div id="preview">
+        <div class="apartirde">A partir de:</div>
+        <div class="secao secao-tamanhos" >
+            <div class="separa">
+                <p>Marmita <strong>Econômica</strong> a partir de:</p>
+                <p><strong>R$14,90</strong></p>
+            </div>
+            <div class="separa">
+                <p>Marmita <strong>Média</strong> a partir de:</p>
+                <p><strong>R$17,90</strong></p>
+            </div>
+            <div class="separa">
+                <p>Marmita <strong>Grande</strong> a partir de:</p>
+                <p><strong>R$19,90</strong></p>
+            </div>
+            <div class="separa">
+                <p>Marmita <strong>Fit</strong> a partir de:</p>
+                <p><strong>R$19,90</strong></p>
+            </div>
+            <div class="separa">
+                <p>Marmita <strong>Executiva</strong> a partir de:</p>
+                <p><strong>R$20,90</strong></p>
+            </div>
+        </div>
+        <div class="secao secao-misturas" id="sec-mist"></div>
+        <div class="secao secao-acompanhamentos" id="sec-acomps"></div>
+        <!-- <img src="imagens/base-cardapio.jpg" alt="imagem cardápio"> -->
+    </div>
+    
+
+
+    <script src="main.js"></script>
+</body>
+</html>

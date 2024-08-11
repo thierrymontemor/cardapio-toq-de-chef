@@ -31,30 +31,50 @@ function converter(){
     divAlvo.style.display = 'block';
     misturas = [...document.getElementsByClassName('dados-mistura')]
     
-    misturas.map((misturinha)=>{
-        let paragrafo = document.createElement("p")
-        paragrafo.innerHTML =  ` ${misturinha.value}`
+    misturas.map((misturinha, indiceM)=>{
+        
+        let paragrafo = document.createElement("div")
+
+        let texto = misturinha.value.replace(/(\*[^*]+\*)/g, match => {
+            const text = match.slice(1, -1);
+            return `<strong>${text}</strong>`;
+        });
+        paragrafo.innerHTML =  ` <div> ${texto}</div>`
         paragrafo.setAttribute('class', 'itens')
+        if(indiceM%2!=0){
+            paragrafo.setAttribute('class','fundoB itens')
+        }
         secaoMisturas.appendChild(paragrafo)
     })
     acomps = [...document.getElementsByClassName('dados-acomp')]
-    acomps.map((acompinho)=>{
+    acomps.map((acompinho, indiceA)=>{
         console.log(acompinho.value)
         let paragrafo2 = document.createElement("p")
+        let texto = acompinho.value.replace(/(\*[^*]+\*)/g, match => {
+            const text = match.slice(1, -1);
+            return `<strong>${text}</strong>`;
+        });
+        paragrafo2.innerHTML =  ` <div> ${texto}</div>`
         paragrafo2.setAttribute('class', 'itens')
-        paragrafo2.innerHTML =  ` ${acompinho.value}`
+        if(indiceA%2!=0){
+            paragrafo2.setAttribute('class','fundoB itens')
+        }
         secaoAcomps.appendChild(paragrafo2)
     })
     
+    document.fonts.ready.then(function(){
 
-    html2canvas((divAlvo), {
-         scale: 7, // Aumenta a escala para melhorar a qualidade
-          useCORS: true // Garante que imagens externas sejam carregadas
-      }).then(function(canvas) {
-    let link = document.createElement("a");
-    link.download = 'cardapio.png';
-    link.href = canvas.toDataURL("image/png");
-    link.click();
-});
+        html2canvas((divAlvo), {
+            scale: 2, // Aumenta a escala para melhorar a qualidade
+             useCORS: true // Garante que imagens externas sejam carregadas
+         }).then(function(canvas) {
+       let link = document.createElement("a");
+       link.download = 'cardapio.png';
+       link.href = canvas.toDataURL("image/png");
+       link.click();
+   });
+        
+    })
+  
 }
 botaoDownload.addEventListener("click", converter)

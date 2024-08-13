@@ -146,9 +146,12 @@ strong{
     background-color: #c7540c;
 }
 .itens::before{
-    content: "♦";
+    font-family: 'Material Symbols Outlined';
+    font-size: 2rem;
+    content: 'restaurant';
+    font-weight: 900;
     margin: 0 15px;
-    color: white;   
+    color: #124D2D;   
 }
 h2,h3{
     width: 90%;

@@ -9,17 +9,25 @@ let acomps =[]
 const secaoMisturas = document.getElementById('sec-mist')
 const secaoAcomps = document.getElementById('sec-acomps')
 
+
 btAddMist.addEventListener("click", ()=>{
+
+    let div = document.createElement("div")
     let input = document.createElement("input");
     input.setAttribute("class", "dados-mistura");
-    input.setAttribute("placeholder", "Insira a mistura");
-    parteMist.appendChild(input);
+    input.setAttribute("placeholder", "Insira a mistura")
+    input.setAttribute("list","sugestoes-misturas");
+    div.appendChild(input)
+    parteMist.appendChild(div);
 })
 btAddAcomp.addEventListener("click", ()=>{
+    let div = document.createElement("div")
     let input = document.createElement("input");
     input.setAttribute("class", "dados-acomp");
     input.setAttribute("placeholder", "Insira o acompanhamento");
-    parteAcomp.appendChild(input);
+    input.setAttribute("list","sugestoes-acomps")
+    div.appendChild(input)
+    parteAcomp.appendChild(div);
 })
 
 function converter(){

@@ -9,26 +9,42 @@ let acomps =[]
 const secaoMisturas = document.getElementById('sec-mist')
 const secaoAcomps = document.getElementById('sec-acomps')
 
-
-btAddMist.addEventListener("click", ()=>{
-
+function addInputMistura(){
     let div = document.createElement("div")
     let input = document.createElement("input");
+    let btRemove = document.createElement("button")
+    btRemove.setAttribute("class","lixeira")
+    btRemove.innerHTML='<span class="material-symbols-outlined">delete</span>';
     input.setAttribute("class", "dados-mistura");
     input.setAttribute("placeholder", "Insira a mistura")
     input.setAttribute("list","sugestoes-misturas");
     div.appendChild(input)
+    div.appendChild(btRemove)
     parteMist.appendChild(div);
-})
-btAddAcomp.addEventListener("click", ()=>{
+    btRemove.addEventListener("click",()=>{
+        parteMist.removeChild(div)
+    })
+}
+function addInputAcomp(){
     let div = document.createElement("div")
     let input = document.createElement("input");
+    let btRemove = document.createElement("button")
+    btRemove.setAttribute("class","lixeira")
+    btRemove.innerHTML='<span class="material-symbols-outlined">delete</span>';
     input.setAttribute("class", "dados-acomp");
     input.setAttribute("placeholder", "Insira o acompanhamento");
     input.setAttribute("list","sugestoes-acomps")
     div.appendChild(input)
+    div.appendChild(btRemove)
     parteAcomp.appendChild(div);
-})
+    btRemove.addEventListener("click",()=>{
+        parteAcomp.removeChild(div)
+    })
+}
+addInputMistura()
+addInputAcomp()
+btAddMist.addEventListener("click",addInputMistura)
+btAddAcomp.addEventListener("click",addInputAcomp)
 
 function converter(){
     misturas =[]
@@ -56,7 +72,6 @@ function converter(){
     })
     acomps = [...document.getElementsByClassName('dados-acomp')]
     acomps.map((acompinho, indiceA)=>{
-        console.log(acompinho.value)
         let paragrafo2 = document.createElement("p")
         let texto = acompinho.value.replace(/(\*[^*]+\*)/g, match => {
             const text = match.slice(1, -1);
@@ -71,7 +86,6 @@ function converter(){
     })
     
     document.fonts.ready.then(function(){
-
         html2canvas((divAlvo), {
             scale: 2, // Aumenta a escala para melhorar a qualidade
              useCORS: true // Garante que imagens externas sejam carregadas
@@ -81,8 +95,9 @@ function converter(){
        link.href = canvas.toDataURL("image/png");
        link.click();
    });
-        
+        setInterval(() => {
+        divAlvo.style.display = 'none';
+    }, 100);
     })
-  
 }
 botaoDownload.addEventListener("click", converter)

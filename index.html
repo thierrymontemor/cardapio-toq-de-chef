@@ -9,47 +9,72 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
 </head>
 <body>
+    <header>
+        <h2>Toq de Chef<hr><strong>C a r d á p i o</strong></h2>
+    </header>
     <section id="dados">
+        <h3>misturas</h3>
         <div id="misturas">
             <div class="container">
-                    <input list="sugestoes-misturas" type="text" class="dados-mistura" placeholder="Insira a mistura ">
                     <datalist id="sugestoes-misturas">
-                        <option value="ALMÔNDEGAS AO SUGO *+R$3,00*"></option>
-                        <option value="BOLINHO DE CARNE MAIA *+R$3,00*"></option>
-                        <option value="CARNE MOÍDA COM LEGUMES *+R$3,00*"></option>
-                        <option value="CUBINHOS DE FRANGO AO CREME DE BATATA  *+R$2,00*"></option>
-                        <option value="CUBINHOS DE FRANGO GRELHADO"></option>
-                        <option value="FEIJOADA COMPLETA *+R$3,00* ( Acompanha arroz, couve refogada e torresmo)">
-                        <option value="FILÉ DE FRANGO EMPANADO *+R$1,00*"></option>
-                        <option value="FILÉ DE FRANGO GRELHADO"></option>
-                        <option value="FRANGO ASSADO *+R$3,00*"></option>
-                        <option value="FRICASSÊ DE FRANGO *+R$1,00*"></option>
-                        <option value="ISCA DE FRANGO GRELHADO"></option>
-                        <option value="PANQUECA DE CARNE MOÍDA *+R$3,00*">
-                        <option value="ROCAMBOLE DE CARNE MOÍDA RECHEADO *+R$3,00*">
-                        <option value="STROGONOFF DE FRANGO *+R$2,00* ( SEM FEIJÃO)"></option>
-                        <option value="VIRADO À PAULISTA *+R$3,00* ( Acompanha arroz, tutu de feijão, couve refogada, ovo frito e torresmo)"></option>
+                        <option value="*Almôndegas ao Sugo* +R$3,00"></option>
+                        <option value="*Bife a Cavalo* +R$4,00"></option>
+                        <option value="*Bife Acebolado* +R$4,00"></option>
+                        <option value="*Bife à Milanesa* +R$4,00"></option>
+                        <option value="*Bolinho de Carne Moída* +R$3,00"></option>
+                        <option value="*Carne Acebolada à Moda da Casa* +R$3,00"></option>
+                        <option value="*Carne com Batata* +R$3,00"></option>
+                        <option value="*Carne com Mandioca* +R$3,00"></option>
+                        <option value="*Carne de Panela* +R$3,00"></option>
+                        <option value="*Carne Moída com Legumes* +R$3,00"></option>
+                        <option value="*Cubinhos de Frango ao Creme de Batata* +R$2,00"></option>
+                        <option value="*Cubinhos de Frango Grelhado*"></option>
+                        <option value="*Feijoada Completa* (acompanha arroz, couve refogada e torresmo) +R$3,00"></option>
+                        <option value="*Filé de Frango Empanado* +R$1,00"></option>
+                        <option value="*Filé de Frango Grelhado*"></option>
+                        <option value="*Filé de Peixe Empanado* (sem espinho) +R$4,00"></option>
+                        <option value="*Frango Assado* +R$3,00"></option>
+                        <option value="*Frango Assado* (coxa e sobrecoxa) +R$1,00"></option>
+                        <option value="*Frango Frito Alho e Óleo*"></option>
+                        <option value="*Fricassê de Frango* +R$1,00"></option>
+                        <option value="*Isca de Frango Grelhado*"></option>
+                        <option value="*Isca de Peixe Empanado* +R$4,00"></option>
+                        <option value="*Panqueca de Carne Moída* +R$3,00"></option>
+                        <option value="*Parmegiana de Frango* (sem feijão) +R$4,00"></option>
+                        <option value="*Rocambole de Carne Moída Recheado* +R$3,00"></option>
+                        <option value="*Strogonoff de Frango* (sem feijão) +R$2,00"></option>
+                        <option value="*Virado à Paulista* (acompanha arroz, tutu de feijão, couve refogada, ovo frito e torresmo) +R$3,00"></option>
                     </datalist>
-                    
-                
             </div>
-            
         </div>
-        <button id="bt-adicao-mistura">+</button>
+        <button id="bt-adicao-mistura"><span class="material-symbols-outlined">
+            add_circle
+            </span> mistura</button>
+        <h3>acompanhamentos</h3>
         <div id="acomps">
             <div>
-                <input list="sugestoes-acomps" type="text" class="dados-acomp" placeholder="Insira o acompanhamento">
                 <datalist id="sugestoes-acomps">
-                    <option value="BATATA FRITA">
-                    <option value="COUVE REFOGADA">
-                    <option value="FAROFA">
-                    <option value="LEGUMES">
-                    <option value="VINAGRETE">  
+                    <option value="*Batata Dore*"></option>
+                    <option value="*Batata Frita*"></option>
+                    <option value="*Batata Sauté*"></option>
+                    <option value="*Bolinho de Arroz*"></option>
+                    <option value="*Couve Refogada*"></option>
+                    <option value="*Farofa*"></option>
+                    <option value="*Legumes*"></option>
+                    <option value="*Legumes Refogado*"></option>
+                    <option value="*Macarrão Alho e Óleo*"></option>
+                    <option value="*Repolho com Cenoura Refogado*"></option>
+                    <option value="*Repolho Refogado*"></option>
+                    <option value="*Seleta de Legumes*"></option>
+                    <option value="*Vinagrete*"></option>
                 </datalist>
+                
                 
             </div>
         </div>
-        <button id="bt-adicao-acomp">+</button>
+        <button id="bt-adicao-acomp"><span class="material-symbols-outlined">
+            add_circle
+            </span> acompanhamento</button>
         <div id="botao"><button id="botaoDownload">GERAR CARDÁPIO</button></div>
     </section>
 
